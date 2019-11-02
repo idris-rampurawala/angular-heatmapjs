@@ -1,6 +1,20 @@
 {
   "name": "angular-heatmapjs",
   "version": "0.0.0",
+  "description": "Angular 8 implementation of popular heatmap.js library with mouse-over click feature",
+  "author": {
+    "name": "Idris Rampurawala",
+    "url": "https://github.com/idris-rampurawala",
+    "github": "https://github.com/idris-rampurawala",
+    "twitter": "https://twitter.com/idRampurawala"
+  },
+  "contributors": [
+    {
+      "name": "Idris Rampurawala",
+      "url": "https://github.com/idris-rampurawala"
+    }
+  ],
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,8 +33,6 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
-    "@types/jquery": "^3.3.31",
-    "jquery": "^3.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
