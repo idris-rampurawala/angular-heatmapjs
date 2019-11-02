@@ -12,7 +12,6 @@ const HEATMAP_WIDTH = 225;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Heatmap.js in Angular!';
   gradientCfg = {
     '0.15': '#6ad180', // green
     '0.25': '#7cd573',
@@ -38,9 +37,7 @@ export class AppComponent implements OnInit {
   xMaxCoord: number;
   yMaxCoord: number;
 
-  constructor(private renderer: Renderer2) {
-
-  }
+  constructor(private renderer: Renderer2) {  }
 
   ngOnInit(): void {
     this.generateCoordinates();

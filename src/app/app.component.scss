@@ -1,6 +1,8 @@
 // variables
 $screen-width: 225px;
-
+.heading{
+    padding-left: 5px;
+}
 #heatmapContainer {
   width: $screen-width;
   cursor: pointer;
