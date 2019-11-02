@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   };
   heatmap: any = null;
   coordinates: Array<Coordinate> = []
+  selectedCoordinates: Array<Coordinate> = []
   heatmapContainer: HTMLElement;
   tooltip: HTMLElement;
   isMouseInsideHeatmap = false;
@@ -137,7 +138,8 @@ export class AppComponent implements OnInit {
         }
       }
     }
-    console.log(this.fetchXYPositionTaskList(circlePositionsXY));
+    this.selectedCoordinates = this.fetchXYPositionTaskList(circlePositionsXY);
+    console.log(this.selectedCoordinates);
   }
 
   fetchXYPositionTaskList(circlePositionsXY: Set<string>): Array<Coordinate> {

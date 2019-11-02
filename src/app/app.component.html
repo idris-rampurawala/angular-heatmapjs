@@ -55,6 +55,27 @@
     (mouseenter)="heatmapMouseEnter()" (click)="mouseCircleClick($event)">
     <div class="overlay"></div>
   </div>
+
+  <div *ngIf="selectedCoordinates.length" class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>x</th>
+          <th>y</th>
+          <th>value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coord of selectedCoordinates; let i=index;">
+          <td>{{ i+1 }}</td>
+          <td>{{ coord.x }}</td>
+          <td>{{ coord.y }}</td>
+          <td>{{ coord.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
