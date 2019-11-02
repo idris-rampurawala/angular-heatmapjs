@@ -1,27 +1,25 @@
 # AngularHeatmapjs
 
+> This project is a [Heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) implementation in Angular 8. Key feature includes heatmap click insights.
+
+## Background
+
+Heatmaps over an image is a new thing in web development. [Patrick's](https://github.com/pa7) heatmap.js is great tool to generate heatmap on an image easily. I have created this repository for Angular developers to easily integrate heatmap.js in angular projects.
+
+One key feature that I have implemented is a **mouse-over click on heatmap**. Visit this [link](https://idris-rampurawala.github.io/angular-heatmapjs/) to see it in action!
+
+![Heatmap Demo](https://res.cloudinary.com/idr/image/upload/v1572696287/github-repo/angular-heatmap-click-preview_scaawo.png)
+
+## Installation
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+- Clone the repository `git clone <repo-name>`
+- Install dependencies via `npm i`
+- Run the code via [angular cli](https://cli.angular.io/) `ng serve`. Navigate to `http://localhost:4200/` to see it in action
 
-## Development server
+## See also
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Heatmap.js Documentation](https://www.patrick-wied.at/static/heatmapjs/docs.html)
 
-## Code scaffolding
+## License
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+MIT
