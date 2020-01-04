@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     '1.0': '#c24039' // highest red
   };
   heatmap: any = null;
-  coordinates: Array<Coordinate> = []
-  selectedCoordinates: Array<Coordinate> = []
+  coordinates: Array<Coordinate> = [];
+  selectedCoordinates: Array<Coordinate> = [];
   heatmapContainer: HTMLElement;
   tooltip: HTMLElement;
   isMouseInsideHeatmap = false;
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   xMaxCoord: number;
   yMaxCoord: number;
 
-  constructor(private renderer: Renderer2) {  }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.generateCoordinates();
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
   }
 
   // heatmap tooltip
-  updateTooltip(x: number, y: number) {
+  updateTooltip(x: number, y: number): void {
     const transl = 'translate(' + (x + MOUSE_CIRCLE_TRANSL_RADIUS) + 'px, ' + (y + MOUSE_CIRCLE_TRANSL_RADIUS) + 'px)';
     this.renderer.setStyle(this.tooltip, 'transform', transl)
     this.renderer.setProperty(this.tooltip, 'innerText', 'Click to get the coordinates inside the circle');
@@ -118,7 +118,7 @@ export class AppComponent implements OnInit {
     this.isMouseInsideHeatmap = true;
   }
 
-  mouseCircleClick(evt: any) {
+  mouseCircleClick(evt: any): void {
     const radiusSquared = MOUSE_CIRCLE_RADIUS * MOUSE_CIRCLE_RADIUS;
     const circlePositionsXY = new Set<string>();
     const xcord = evt.layerX;
@@ -139,7 +139,6 @@ export class AppComponent implements OnInit {
       }
     }
     this.selectedCoordinates = this.fetchXYPositionTaskList(circlePositionsXY);
-    console.log(this.selectedCoordinates);
   }
 
   fetchXYPositionTaskList(circlePositionsXY: Set<string>): Array<Coordinate> {
@@ -157,7 +156,7 @@ export class AppComponent implements OnInit {
     return selectedCoods;
   }
 
-  calculateMinMaxCoord() {
+  calculateMinMaxCoord(): void {
     if (!this.coordinates.length) {
       return;
     }
