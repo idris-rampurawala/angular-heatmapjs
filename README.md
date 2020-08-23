@@ -19,6 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## See also
 
 - [Heatmap.js Documentation](https://www.patrick-wied.at/static/heatmapjs/docs.html)
+- [In-depth article on this implementation](https://dev.to/idrisrampurawala/integrating-heatmap-js-with-mouse-over-click-in-angular-56ga)
 
 ## License
 
