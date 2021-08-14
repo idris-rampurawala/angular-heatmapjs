@@ -1,6 +1,6 @@
 # AngularHeatmapjs
 
-> This project is a [Heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) implementation in Angular 8. Key feature includes heatmap click insights.
+> This project is a [Heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) implementation in Angular. Key feature includes heatmap click insights.
 
 ## Background
 
@@ -11,7 +11,7 @@ One key feature that I have implemented is a **mouse-over click on heatmap**. Vi
 ![Heatmap Demo](https://res.cloudinary.com/idr/image/upload/v1572696287/github-repo/angular-heatmap-click-preview_scaawo.png)
 
 ## Installation
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+This project runs with [Angular CLI](https://github.com/angular/angular-cli) version 11 or higher.
 - Clone the repository `git clone <repo-name>`
 - Install dependencies via `npm i`
 - Run the code via [angular cli](https://cli.angular.io/) `ng serve`. Navigate to `http://localhost:4200/` to see it in action
@@ -23,4 +23,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## License
 
-MIT
+This program is free software under MIT license. Please see the [LICENSE](LICENSE) file in our repository for the full text.

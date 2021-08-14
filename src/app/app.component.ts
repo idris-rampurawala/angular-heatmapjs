@@ -13,18 +13,18 @@ const HEATMAP_WIDTH = 225;
 })
 export class AppComponent implements OnInit {
   gradientCfg = {
-    '0.15': '#6ad180', // green
-    '0.25': '#7cd573',
-    '0.35': '#90d865',
-    '0.45': '#a4da57',
-    '0.55': '#badc48',
-    '0.65': '#c9cf35',
-    '0.75': '#d6c226',
-    '0.80': '#e2b41c',
-    '0.85': '#e2961d',
-    '0.90': '#dd7826',
-    '0.95': '#d25c30',
-    '1.0': '#c24039' // highest red
+    0.15: '#6ad180', // green
+    0.25: '#7cd573',
+    0.35: '#90d865',
+    0.45: '#a4da57',
+    0.55: '#badc48',
+    0.65: '#c9cf35',
+    0.75: '#d6c226',
+    0.80: '#e2b41c',
+    0.85: '#e2961d',
+    0.90: '#dd7826',
+    0.95: '#d25c30',
+    1.0: '#c24039' // highest red
   };
   heatmap: any = null;
   coordinates: Array<Coordinate> = [];
@@ -68,22 +68,26 @@ export class AppComponent implements OnInit {
   }
 
   generateCoordinates(): void {
+    // tslint:disable-next-line: no-bitwise
     const extremas = [(Math.random() * 1000) >> 0, (Math.random() * 1000) >> 0];
     const max = Math.max.apply(Math, extremas);
     const min = Math.min.apply(Math, extremas);
     for (let i = 0; i < 1000; i++) {
+      // tslint:disable-next-line: no-bitwise
       const x = (Math.random() * HEATMAP_WIDTH) >> 0;
+      // tslint:disable-next-line: no-bitwise
       const y = (Math.random() * HEATMAP_HEIGHT) >> 0;
+      // tslint:disable-next-line: no-bitwise
       const c = ((Math.random() * max - min) >> 0) + min;
       // add to dataset
-      this.coordinates.push({ x: x, y: y, value: c });
+      this.coordinates.push({ x, y, value: c });
     }
   }
 
   // heatmap tooltip
   updateTooltip(x: number, y: number): void {
     const transl = 'translate(' + (x + MOUSE_CIRCLE_TRANSL_RADIUS) + 'px, ' + (y + MOUSE_CIRCLE_TRANSL_RADIUS) + 'px)';
-    this.renderer.setStyle(this.tooltip, 'transform', transl)
+    this.renderer.setStyle(this.tooltip, 'transform', transl);
     this.renderer.setProperty(this.tooltip, 'innerText', 'Click to get the coordinates inside the circle');
     // mouse circle code
     const itemRect = this.mouseCircle.getBoundingClientRect();
@@ -143,13 +147,12 @@ export class AppComponent implements OnInit {
 
   fetchXYPositionTaskList(circlePositionsXY: Set<string>): Array<Coordinate> {
     const selectedCoods = [];
-    for (let i = 0; i < this.coordinates.length; i++) {
-      const currElement = this.coordinates[i];
-      if (circlePositionsXY.has(`${currElement['x']}${currElement['y']}`)) {
+    for (const currElement of this.coordinates) {
+      if (circlePositionsXY.has(`${currElement.x}${currElement.y}`)) {
         selectedCoods.push({
-          x: currElement['x'],
-          y: currElement['y'],
-          value: currElement['value']
+          x: currElement.x,
+          y: currElement.y,
+          value: currElement.value
         });
       }
     }
@@ -160,22 +163,22 @@ export class AppComponent implements OnInit {
     if (!this.coordinates.length) {
       return;
     }
-    this.xMinCoord = this.coordinates[0]['x'];
+    this.xMinCoord = this.coordinates[0].x;
     this.xMaxCoord = 0;
-    this.yMinCoord = this.coordinates[0]['y'];
+    this.yMinCoord = this.coordinates[0].y;
     this.yMaxCoord = 0;
     this.coordinates.forEach(element => {
-      if (element['x'] < this.xMinCoord) {
-        this.xMinCoord = element['x'];
+      if (element.x < this.xMinCoord) {
+        this.xMinCoord = element.x;
       }
-      if (element['y'] < this.yMinCoord) {
-        this.yMinCoord = element['y'];
+      if (element.y < this.yMinCoord) {
+        this.yMinCoord = element.y;
       }
-      if (element['x'] > this.xMaxCoord) {
-        this.xMaxCoord = element['x'];
+      if (element.x > this.xMaxCoord) {
+        this.xMaxCoord = element.x;
       }
-      if (element['y'] > this.yMaxCoord) {
-        this.yMaxCoord = element['y'];
+      if (element.y > this.yMaxCoord) {
+        this.yMaxCoord = element.y;
       }
     });
   }
