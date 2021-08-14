@@ -1,7 +1,7 @@
 {
   "name": "angular-heatmapjs",
-  "version": "0.0.0",
-  "description": "Angular 8 implementation of popular heatmap.js library with mouse-over click feature",
+  "version": "1.0.0",
+  "description": "Angular implementation of popular heatmap.js library with mouse-over click feature",
   "author": {
     "name": "Idris Rampurawala",
     "url": "https://github.com/idris-rampurawala",
